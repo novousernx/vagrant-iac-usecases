@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: yes
+  vars_files:
+    - var/main.yml
   tasks:
     - name: Create directory for storing our website (/webapp/main-site)
       become: yes
@@ -12,6 +14,7 @@
       apt: 
         name: nginx 
         state: latest
+      #force_apt_get: yes # Force usage of apt-get instead of aptitude
 
     - name: Start nginx service
       service:
@@ -35,7 +38,7 @@
 
     - name: Clone website from github
       git:
-        repo: 'https://github.com/ginigangadharan/vagrant-gcp-iaas-demo-site.git'
+        repo: 'https://github.com/ginigangadharan/demo-website-content.git'
         dest: /webapp/main-site
 
     - name: restart nginx to load configuratioins
@@ -106,6 +109,7 @@
         state: restarted
 
    # Show Public Hostname/Url to access website
-    - name: show public url
+
+- name: show public url
       debug:
-        msg: "Your website can be accessed using url : {{ aws_meta.content }}"
+        msg: "Your website can be accessed using url " # : {{ aws_meta.content }}

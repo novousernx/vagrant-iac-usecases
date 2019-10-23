@@ -6,48 +6,25 @@ Vagrant.configure('2') do |config|
   
   # Since we are using GCP Image, below config.vm.box is just for syntax purpose.
   config.vm.box = "google/gce"
-  
 
-  # config.vm.hostname is not mandatory as AWS will handle the same.
   # config.vm.hostname = "webserver101"
 
   # Specify GCP provider configurations
   config.vm.provider :google do |google, override|
-  
-    # google.google_project_id = "YOUR_GOOGLE_CLOUD_PROJECT_ID"
-    google.google_project_id = "devops-vinmel"
-    
-    # google.google_client_email = "YOUR_SERVICE_ACCOUNT_EMAIL_ADDRESS"
-
-    # google.google_json_key_location = "/path/to/your/private-key.json"
-    # google.google_json_key_location = "/d/Users/Gineesh/DevOps-VinMel-a1d7290c059e.json"
-
-    # for my Mac
-    # google.google_json_key_location = "~/DevOps-VinMel-a1d7290c059e.json"
-
-    # for windows
-    #google.google_json_key_location = "C:\Gini\DevOps\DevOps-VinMel-ef65f08aefc1.json"
-    google.google_json_key_location = "/C/Gini/DevOps/DevOps-VinMel-ef65f08aefc1.json"
-
-    # Specify GCP Image Family
+    google.google_project_id = "devops-vinmel"       
+    # google.google_json_key_location = "~/DevOps-VinMel-a1d7290c059e.json"  # for my Mac
+    google.google_json_key_location = "~/.gcp/DevOps-VinMel-ef65f08aefc1.json"
     google.image_family = 'ubuntu-1604-lts'
-
-    #config.ssh.private_key_path = ['/c/Users/MadaPparamG/.ssh/google_compute_engine']
-
-    # Specify username and private key path
-    
+    machine_type = 'g1-small' #g1-small / n1-standard-1 / n1-standard-2 etc
     # From my Mac
     #override.ssh.username = 'gini'
-    #override.ssh.private_key_path = "~/.ssh/id_gce"
+    #override.ssh.private_key_path = "~/.ssh/id_gce"   
 
-    config.ssh.insert_key = false 
-    # for windows
-    override.ssh.username = 'MadaPparamG'
+    # for devops
+    override.ssh.username = 'devops'
     override.ssh.private_key_path = '~/.ssh/id_rsa'
-    
-    #config.ssh.private_key_path = ["/c/Users/MadaPparamG/.ssh/google_compute_engine"]
-    # "/c/Users/MadaPparamG/.ssh/google_compute_engine" 
-    #'c:\\Users\\MadaPparamG\\.ssh\\id_rsa' 
+
+    config.ssh.insert_key = false
 
   end
 

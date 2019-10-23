@@ -9,29 +9,7 @@ Any questions : [Email](mailto:net.gini@gmail.com) | [LinkedIn](http://bit.ly/gi
 
 This **IaaC** will create a Virtual Machine in **AWS** in which **nginx** webserver will be installed automatically. Also, website content will be copied from [github sample site](https://github.com/ginigangadharan/vagrant-aws-iaas-demo-site.git). We will also enable firewall and root login securities automatically using ansible provisioning. 
 
-<!-- TOC -->
-
-- [Vagrant IaaC (Infra as a Code) on GCP - Demo](#vagrant-iaac-infra-as-a-code-on-gcp---demo)
-- [DO NOT USE AS THIS IS COPIED FROM AWS DEMO.  PAGE CONTENT WILL BE UPDATED SOON](#do-not-use-as-this-is-copied-from-aws-demo--page-content-will-be-updated-soon)
-    - [Google Cloud Platform Setup](#google-cloud-platform-setup)
-    - [How to use this repo - Quick Overview](#how-to-use-this-repo---quick-overview)
-    - [Step 1 - Configure Pre-requisites](#step-1---configure-pre-requisites)
-        - [Vagrant Installation](#vagrant-installation)
-        - [Plugin Installation - vagrant-google](#plugin-installation---vagrant-google)
-            - [Notes](#notes)
-        - [Setup Provider Environment - AWS](#setup-provider-environment---aws)
-            - [Box Image](#box-image)
-    - [Step 2 - Create our Virtual Machine - AWS Instance](#step-2---create-our-virtual-machine---aws-instance)
-        - [Vagrantfile](#vagrantfile)
-        - [Provisioning](#provisioning)
-            - [When provisioning happens ?](#when-provisioning-happens-)
-        - [Let's create the VM](#lets-create-the-vm)
-        - [Verify our instance](#verify-our-instance)
-        - [Stop or Delete VM](#stop-or-delete-vm)
-        - [Troubleshooting](#troubleshooting)
-            - [vagrant up hang at "==> default: Waiting for SSH to become available..."](#vagrant-up-hang-at--default-waiting-for-ssh-to-become-available)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [Vagrant IaaC (Infra as a Code) on GCP - Demo](#vagrant-iaac-infra-as-a-code-on-gcp---demo)auto- [DO NOT USE AS THIS IS COPIED FROM AWS DEMO.  PAGE CONTENT WILL BE UPDATED SOON](#do-not-use-as-this-is-copied-from-aws-demo--page-content-will-be-updated-soon)auto    - [Google Cloud Platform Setup](#google-cloud-platform-setup)auto    - [How to use this repo - Quick Overview](#how-to-use-this-repo---quick-overview)auto    - [Step 1 - Configure Pre-requisites](#step-1---configure-pre-requisites)auto        - [1.1 Vagrant Installation](#11-vagrant-installation)auto        - [1.2 Plugin Installation - vagrant-google](#12-plugin-installation---vagrant-google)auto            - [Notes](#notes)auto        - [1.3 Setup Provider Environment - AWS](#13-setup-provider-environment---aws)auto            - [Box Image](#box-image)auto    - [Step 2 - Create our Virtual Machine - AWS Instance](#step-2---create-our-virtual-machine---aws-instance)auto        - [2.1 Vagrantfile](#21-vagrantfile)auto        - [2.2 Provisioning](#22-provisioning)auto            - [When provisioning happens ?](#when-provisioning-happens-)auto        - [2.3 Let's create the VM](#23-lets-create-the-vm)auto        - [2.4 Verify our instance](#24-verify-our-instance)auto        - [2.5 Stop or Delete VM](#25-stop-or-delete-vm)auto        - [Troubleshooting](#troubleshooting)auto            - [vagrant up hang at "==> default: Waiting for SSH to become available..."](#vagrant-up-hang-at--default-waiting-for-ssh-to-become-available)autoauto<!-- /TOC -->
 
 
 ## Google Cloud Platform Setup
@@ -99,7 +77,7 @@ Vagrant is coming with support for VirtualBox, Hyper-V, and Docker. If you want 
 You may refer [vagrant-aws](https://github.com/mitchellh/vagrant-aws) in github for the same.
 
 ```
-# vagrant plugin install vagrant-google
+vagrant plugin install vagrant-google
 ```
 
 *If any issues during installation, then try with installing dependencies. (Depends on the workstation machine you are using, packages and version may change)*
