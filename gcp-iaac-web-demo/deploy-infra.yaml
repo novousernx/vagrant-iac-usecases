@@ -1,5 +1,6 @@
 ---
-- hosts: all
+- name: Configure Web server
+  hosts: all
   become: yes
   vars_files:
     - var/main.yml
@@ -89,18 +90,20 @@
         state: present
       notify: restart ssh
 
-    #- name: Collect Public Hostname/Url to access
-    #  uri: 
-    #    url: http://169.254.169.254/latest/meta-data/public-hostname
-    #    dest: /tmp/abc
-    #    return_content: yes
-    #  register: aws_meta
-    #  notify: show public url
-    
-    #- name: Verify website access
-    #  uri:
-    #    url: "http://{{ aws_meta.content }}"
-    #    status_code: 200
+    - name: Collect Public IP to access
+      uri: 
+        url: http://169.254.169.254/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip
+        dest: /tmp/abc
+        return_content: yes
+        headers:
+          Metadata-Flavor: "Google"
+      register: instance_meta
+      #notify: show public url
+      
+    - name: Verify website access
+      uri:
+        url: "http://{{ instance_meta.content }}"
+        status_code: 200
       
   handlers:
     - name: restart ssh
@@ -108,8 +111,12 @@
         name: sshd
         state: restarted
 
-   # Show Public Hostname/Url to access website
-
-- name: show public url
+# Show Public Hostname/Url to access website
+- name: Display status
+  hosts: all
+  vars_files:
+    - var/main.yml
+  tasks:
+    - name: Show public IP to Access
       debug:
-        msg: "Your website can be accessed using url " # : {{ aws_meta.content }}
+        msg: "Your website can be accessed using public IP : http://{{ instance_meta.content }}" #{{ ansible_default_ipv4 }}" # : {{ aws_meta.content }}
