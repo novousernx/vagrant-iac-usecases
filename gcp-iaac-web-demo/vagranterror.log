@@ -1,0 +1,474 @@
+$ vagrant up --provider=google --debug
+ INFO global: Vagrant version: 2.2.6
+ INFO global: Ruby version: 2.4.9
+ INFO global: RubyGems version: 2.6.14.4
+ INFO global: VAGRANT_EXECUTABLE="C:\\HashiCorp\\Vagrant\\embedded\\gems\\2.2.6\\gems\\vagrant-2.2.6\\bin\\vagrant"
+ INFO global: VAGRANT_INSTALLER_EMBEDDED_DIR="C:\\HashiCorp\\Vagrant\\embedded"
+ INFO global: VAGRANT_INSTALLER_ENV="1"
+ INFO global: VAGRANT_INSTALLER_VERSION="2"
+ INFO global: VAGRANT_LOG="debug"
+ WARN global: resolv replacement has not been enabled!
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/box/plugin.rb
+ INFO manager: Registered plugin: box command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/cap/plugin.rb
+ INFO manager: Registered plugin: cap command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/cloud/plugin.rb
+ INFO manager: Registered plugin: vagrant-cloud
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/destroy/plugin.rb
+ INFO manager: Registered plugin: destroy command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/global-status/plugin.rb
+ INFO manager: Registered plugin: global-status command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/halt/plugin.rb
+ INFO manager: Registered plugin: halt command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/help/plugin.rb
+ INFO manager: Registered plugin: help command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/init/plugin.rb
+ INFO manager: Registered plugin: init command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/list-commands/plugin.rb
+ INFO manager: Registered plugin: list-commands command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/login/plugin.rb
+ INFO manager: Registered plugin: vagrant-login
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/package/plugin.rb
+ INFO manager: Registered plugin: package command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/plugin/plugin.rb
+ INFO manager: Registered plugin: plugin command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/port/plugin.rb
+ INFO manager: Registered plugin: port command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/powershell/plugin.rb
+ INFO manager: Registered plugin: powershell command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/provider/plugin.rb
+ INFO manager: Registered plugin: provider command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/provision/plugin.rb
+ INFO manager: Registered plugin: provision command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/push/plugin.rb
+ INFO manager: Registered plugin: push command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/rdp/plugin.rb
+ INFO manager: Registered plugin: rdp command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/reload/plugin.rb
+ INFO manager: Registered plugin: reload command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/resume/plugin.rb
+ INFO manager: Registered plugin: resume command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/snapshot/plugin.rb
+ INFO manager: Registered plugin: snapshot command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/ssh/plugin.rb
+ INFO manager: Registered plugin: ssh command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/ssh_config/plugin.rb
+ INFO manager: Registered plugin: ssh-config command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/status/plugin.rb
+ INFO manager: Registered plugin: status command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/suspend/plugin.rb
+ INFO manager: Registered plugin: suspend command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/up/plugin.rb
+ INFO manager: Registered plugin: up command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/upload/plugin.rb
+ INFO manager: Registered plugin: upload command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/validate/plugin.rb
+ INFO manager: Registered plugin: validate command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/version/plugin.rb
+ INFO manager: Registered plugin: version command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/winrm/plugin.rb
+ INFO manager: Registered plugin: winrm command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/winrm_config/plugin.rb
+ INFO manager: Registered plugin: winrm-config command
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/communicators/ssh/plugin.rb
+ INFO manager: Registered plugin: ssh communicator
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/communicators/winrm/plugin.rb
+ INFO manager: Registered plugin: winrm communicator
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/communicators/winssh/plugin.rb
+ INFO manager: Registered plugin: windows ssh communicator
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/alpine/plugin.rb
+ INFO manager: Registered plugin: Alpine guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/alt/plugin.rb
+ INFO manager: Registered plugin: ALT Platform guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/amazon/plugin.rb
+ INFO manager: Registered plugin: Amazon Linux guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/arch/plugin.rb
+ INFO manager: Registered plugin: Arch guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/atomic/plugin.rb
+ INFO manager: Registered plugin: Atomic Host guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/bsd/plugin.rb
+ INFO manager: Registered plugin: BSD-based guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/coreos/plugin.rb
+ INFO manager: Registered plugin: CoreOS guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/darwin/plugin.rb
+ INFO manager: Registered plugin: Darwin guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/debian/plugin.rb
+ INFO manager: Registered plugin: Debian guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/dragonflybsd/plugin.rb
+ INFO manager: Registered plugin: DragonFly BSD guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/elementary/plugin.rb
+ INFO manager: Registered plugin: Elementary guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/esxi/plugin.rb
+ INFO manager: Registered plugin: ESXi guest.
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/fedora/plugin.rb
+ INFO manager: Registered plugin: Fedora guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/freebsd/plugin.rb
+ INFO manager: Registered plugin: FreeBSD guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/funtoo/plugin.rb
+ INFO manager: Registered plugin: Funtoo guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/gentoo/plugin.rb
+ INFO manager: Registered plugin: Gentoo guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/haiku/plugin.rb
+ INFO manager: Registered plugin: Haiku guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/kali/plugin.rb
+ INFO manager: Registered plugin: Kali guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/linux/plugin.rb
+ INFO manager: Registered plugin: Linux guest.
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/mint/plugin.rb
+ INFO manager: Registered plugin: Mint guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/netbsd/plugin.rb
+ INFO manager: Registered plugin: NetBSD guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/nixos/plugin.rb
+ INFO manager: Registered plugin: NixOS guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/omnios/plugin.rb
+ INFO manager: Registered plugin: OmniOS guest.
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/openbsd/plugin.rb
+ INFO manager: Registered plugin: OpenBSD guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/photon/plugin.rb
+ INFO manager: Registered plugin: VMware Photon guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/pld/plugin.rb
+ INFO manager: Registered plugin: PLD Linux guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/redhat/plugin.rb
+ INFO manager: Registered plugin: Red Hat Enterprise Linux guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/slackware/plugin.rb
+ INFO manager: Registered plugin: Slackware guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/smartos/plugin.rb
+ INFO manager: Registered plugin: SmartOS guest.
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/solaris/plugin.rb
+ INFO manager: Registered plugin: Solaris guest.
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/solaris11/plugin.rb
+ INFO manager: Registered plugin: Solaris 11 guest.
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/suse/plugin.rb
+ INFO manager: Registered plugin: SUSE guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/tinycore/plugin.rb
+ INFO manager: Registered plugin: TinyCore Linux guest.
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/trisquel/plugin.rb
+ INFO manager: Registered plugin: Trisquel guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/ubuntu/plugin.rb
+ INFO manager: Registered plugin: Ubuntu guest
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/guests/windows/plugin.rb
+ INFO manager: Registered plugin: Windows guest.
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/alt/plugin.rb
+ INFO manager: Registered plugin: ALT Platform host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/arch/plugin.rb
+ INFO manager: Registered plugin: Arch host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/bsd/plugin.rb
+ INFO manager: Registered plugin: BSD host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/darwin/plugin.rb
+ INFO manager: Registered plugin: Mac OS X host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/freebsd/plugin.rb
+ INFO manager: Registered plugin: FreeBSD host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/gentoo/plugin.rb
+ INFO manager: Registered plugin: Gentoo host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/linux/plugin.rb
+ INFO manager: Registered plugin: Linux host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/null/plugin.rb
+ INFO manager: Registered plugin: null host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/redhat/plugin.rb
+ INFO manager: Registered plugin: Red Hat Enterprise Linux host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/slackware/plugin.rb
+ INFO manager: Registered plugin: Slackware host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/suse/plugin.rb
+ INFO manager: Registered plugin: SUSE host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/void/plugin.rb
+ INFO manager: Registered plugin: Void host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/hosts/windows/plugin.rb
+ INFO manager: Registered plugin: Windows host
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/kernel_v1/plugin.rb
+ INFO manager: Registered plugin: kernel
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/kernel_v2/plugin.rb
+ INFO manager: Registered plugin: kernel
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/providers/docker/plugin.rb
+ INFO manager: Registered plugin: docker-provider
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/providers/hyperv/plugin.rb
+ INFO manager: Registered plugin: Hyper-V provider
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/providers/virtualbox/plugin.rb
+ INFO manager: Registered plugin: VirtualBox provider
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/provisioners/ansible/plugin.rb
+ INFO manager: Registered plugin: ansible
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/provisioners/cfengine/plugin.rb
+ INFO manager: Registered plugin: CFEngine Provisioner
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/provisioners/chef/plugin.rb
+ INFO manager: Registered plugin: chef
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/provisioners/docker/plugin.rb
+ INFO manager: Registered plugin: docker
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/provisioners/file/plugin.rb
+ INFO manager: Registered plugin: file
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/provisioners/puppet/plugin.rb
+ INFO manager: Registered plugin: puppet
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/provisioners/salt/plugin.rb
+ INFO manager: Registered plugin: salt
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/provisioners/shell/plugin.rb
+ INFO manager: Registered plugin: shell
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/pushes/atlas/plugin.rb
+ INFO manager: Registered plugin: atlas
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/pushes/ftp/plugin.rb
+ INFO manager: Registered plugin: ftp
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/pushes/heroku/plugin.rb
+ INFO manager: Registered plugin: heroku
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/pushes/local-exec/plugin.rb
+ INFO manager: Registered plugin: local-exec
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/pushes/noop/plugin.rb
+ INFO manager: Registered plugin: noop
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/synced_folders/nfs/plugin.rb
+ INFO manager: Registered plugin: NFS synced folders
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/synced_folders/rsync/plugin.rb
+ INFO manager: Registered plugin: RSync synced folders
+DEBUG global: Loading core plugin: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/synced_folders/smb/plugin.rb
+ INFO manager: Registered plugin: SMB synced folders
+ INFO vagrant: `vagrant` invoked: ["up", "--provider=google", "--debug"]
+DEBUG vagrant: Creating Vagrant environment
+ INFO environment: Environment initialized (#<Vagrant::Environment:0x000000000506f5b8>)
+ INFO environment:   - cwd: C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo
+ INFO environment: Home path: C:/Users/MadaPparamG/.vagrant.d
+DEBUG environment: Effective local data path: C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo/.vagrant
+ INFO environment: Local data path: C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo/.vagrant
+DEBUG environment: Creating: C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo/.vagrant
+DEBUG manager: Enabling localized plugins
+ INFO manager: Plugins:
+DEBUG bundler: Current generated plugin dependency list: []
+DEBUG bundler: Generating new builtin set instance.
+DEBUG bundler: Generating new plugin set instance. Skip gems - []
+DEBUG bundler: Activating solution set: []
+ INFO manager: Loading plugins...
+DEBUG manager: Enabling globalized plugins
+ INFO manager: Plugins:
+ INFO manager:   - vagrant-google = [installed: 2.5.0 constraint: > 0]
+DEBUG bundler: Current generated plugin dependency list: [<Gem::Dependency type=:runtime name="vagrant-google" requirements="= 2.5.0">]
+DEBUG bundler: Generating new builtin set instance.
+DEBUG bundler: Generating new plugin set instance. Skip gems - []
+DEBUG bundler: Activating solution set: ["httpclient-2.8.3", "multi_json-1.14.0", "jwt-2.2.1", "multipart-post-2.1.1", "faraday-0.17.0", "public_suffix-4.0.1", "addressable-2.7.0", "signet-0.12.0", "os-1.0.1", "memoist-0.16.0", "googleauth-0.6.7", "mime-types-data-3.2019.1009", "mime-types-3.3", "retriable-3.1.2", "declarative-option-0.1.0", "declarative-0.0.10", "uber-0.1.0", "representable-3.0.4", "google-api-client-0.23.9", "mini_portile2-2.4.0", "nokogiri-1.10.4", "formatador-0.2.5", "excon-0.67.0", "builder-3.2.3", "fog-core-2.1.0", "fog-xml-0.1.3", "fog-json-1.2.0", "fog-google-1.9.1", "vagrant-google-2.5.0"]
+DEBUG bundler: Activating gem jwt-2.2.1
+DEBUG bundler: Activating gem multipart-post-2.1.1
+DEBUG bundler: Activating gem faraday-0.17.0
+DEBUG bundler: Activating gem public_suffix-4.0.1
+DEBUG bundler: Activating gem addressable-2.7.0
+DEBUG bundler: Activating gem signet-0.12.0
+DEBUG bundler: Activating gem os-1.0.1
+DEBUG bundler: Activating gem memoist-0.16.0
+DEBUG bundler: Activating gem googleauth-0.6.7
+DEBUG bundler: Activating gem retriable-3.1.2
+DEBUG bundler: Activating gem declarative-option-0.1.0
+DEBUG bundler: Activating gem declarative-0.0.10
+DEBUG bundler: Activating gem uber-0.1.0
+DEBUG bundler: Activating gem representable-3.0.4
+DEBUG bundler: Activating gem google-api-client-0.23.9
+DEBUG bundler: Activating gem mini_portile2-2.4.0
+DEBUG bundler: Activating gem nokogiri-1.10.4-x64-mingw32
+DEBUG bundler: Activating gem formatador-0.2.5
+DEBUG bundler: Activating gem excon-0.67.0
+DEBUG bundler: Activating gem fog-core-2.1.0
+DEBUG bundler: Activating gem fog-xml-0.1.3
+DEBUG bundler: Activating gem fog-json-1.2.0
+DEBUG bundler: Activating gem fog-google-1.9.1
+DEBUG bundler: Activating gem vagrant-google-2.5.0
+ INFO manager: Loading plugins...
+ INFO manager: Loading plugin `vagrant-google` with default require: `vagrant-google`
+ INFO manager: Registered plugin: Google
+DEBUG manager: Successfully loaded plugin `vagrant-google`.
+ INFO loader: Set :root = ["#<Pathname:C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo/Vagrantfile>"]
+DEBUG loader: Populating proc cache for #<Pathname:C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo/Vagrantfile>
+DEBUG loader: Load procs for pathname: C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo/Vagrantfile
+ INFO loader: Loading configuration in order: [:home, :root]
+DEBUG loader: Loading from: root (evaluating)
+DEBUG provisioner: Provisioner defined:
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO loader: Set "48145060_machine_default" = []
+ INFO loader: Loading configuration in order: [:home, :root, "48145060_machine_default"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO box_collection: Box not found: google/gce (google)
+ INFO loader: Set :"48145060_vm_default_google/gce_google" = ["[\"2\", #<Proc:0x000000000419b370>]"]
+DEBUG loader: Populating proc cache for ["2", #<Proc:0x000000000419b370>]
+ INFO loader: Loading configuration in order: [:home, :root, "48145060_machine_default", :"48145060_vm_default_google/gce_google"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 48145060_vm_default_google/gce_google (evaluating)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ WARN vagrantfile: Failed to locate google/gce with version
+ WARN vagrantfile: Performing lookup with inital values google/gce with version
+ INFO box_collection: Box not found: google/gce (google)
+ INFO loader: Set :"48145060_vm_default_google/gce_google" = ["[\"2\", #<Proc:0x000000000419b370>]"]
+ INFO loader: Loading configuration in order: [:home, :root, "48145060_machine_default", :"48145060_vm_default_google/gce_google"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 48145060_vm_default_google/gce_google (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO box_collection: Box not found: google/gce (google)
+ INFO loader: Set :"48145060_vm_default_google/gce_google" = ["[\"2\", #<Proc:0x000000000419b370>]"]
+ INFO loader: Loading configuration in order: [:home, :root, "48145060_machine_default", :"48145060_vm_default_google/gce_google"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 48145060_vm_default_google/gce_google (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO environment: Running hook: environment_plugins_loaded
+ INFO runner: Preparing hooks for middleware sequence...
+ INFO runner: 1 hooks defined.
+ INFO runner: Running action: environment_plugins_loaded #<Vagrant::Action::Builder:0x0000000004106a18>
+ INFO environment: Running hook: environment_load
+ INFO runner: Preparing hooks for middleware sequence...
+ INFO runner: 1 hooks defined.
+ INFO runner: Running action: environment_load #<Vagrant::Action::Builder:0x00000000057e9be0>
+DEBUG checkpoint_client: starting plugin check
+ INFO cli: CLI: [] "up" ["--provider=google"]
+DEBUG cli: Invoking command class: VagrantPlugins::CommandUp::Command ["--provider=google"]
+DEBUG checkpoint_client: waiting for checkpoint to complete...
+DEBUG checkpoint_client: plugin check complete
+DEBUG checkpoint_client: no information received from checkpoint
+DEBUG command: 'Up' each target VM...
+DEBUG command: Getting target VMs for command. Arguments:
+DEBUG command:  -- names: ["default"]
+DEBUG command:  -- options: {:provider=>"google"}
+DEBUG command: Finding machine that match name: default
+ INFO environment: Getting machine: default (google)
+ INFO environment: Uncached load of machine.
+ INFO loader: Set "48145060_machine_default" = []
+ INFO loader: Loading configuration in order: [:home, :root, "48145060_machine_default"]
+ERROR loader: Unknown config sources: [:"48145060_vm_default_google/gce_google"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO box_collection: Box not found: google/gce (google)
+ INFO loader: Set :"48145060_vm_default_google/gce_google" = ["[\"2\", #<Proc:0x000000000419b370>]"]
+ INFO loader: Loading configuration in order: [:home, :root, "48145060_machine_default", :"48145060_vm_default_google/gce_google"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 48145060_vm_default_google/gce_google (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ WARN vagrantfile: Failed to locate google/gce with version
+ WARN vagrantfile: Performing lookup with inital values google/gce with version
+ INFO box_collection: Box not found: google/gce (google)
+ INFO loader: Set :"48145060_vm_default_google/gce_google" = ["[\"2\", #<Proc:0x000000000419b370>]"]
+ INFO loader: Loading configuration in order: [:home, :root, "48145060_machine_default", :"48145060_vm_default_google/gce_google"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 48145060_vm_default_google/gce_google (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO box_collection: Box not found: google/gce (google)
+ INFO loader: Set :"48145060_vm_default_google/gce_google" = ["[\"2\", #<Proc:0x000000000419b370>]"]
+ INFO loader: Loading configuration in order: [:home, :root, "48145060_machine_default", :"48145060_vm_default_google/gce_google"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 48145060_vm_default_google/gce_google (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO machine: Initializing machine: default
+ INFO machine:   - Provider: VagrantPlugins::Google::Provider
+ INFO machine:   - Box:
+ INFO machine:   - Data dir: C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo/.vagrant/machines/default/google
+ INFO machine: Calling action: read_state on provider Google (new)
+DEBUG environment: Attempting to acquire process-lock: machine-action-814f2d90ef9b4a44ab93b12db355bce7
+DEBUG environment: Attempting to acquire process-lock: dotlock
+ INFO environment: Acquired process lock: dotlock
+ INFO environment: Released process lock: dotlock
+ INFO environment: Acquired process lock: machine-action-814f2d90ef9b4a44ab93b12db355bce7
+ INFO interface: Machine: action ["read_state", "start", {:target=>:default}]
+ INFO host: Autodetecting host type for [#<Vagrant::Environment: C:/Gini/DevOps/vagrant-iaac-usecases/gcp-iaac-web-demo>]
+DEBUG host: Trying: alt
+DEBUG host: Trying: arch
+DEBUG host: Trying: darwin
+DEBUG host: Trying: freebsd
+DEBUG host: Trying: gentoo
+DEBUG host: Trying: redhat
+DEBUG host: Trying: slackware
+DEBUG host: Trying: suse
+DEBUG host: Trying: void
+DEBUG host: Trying: bsd
+DEBUG host: Trying: linux
+DEBUG host: Trying: null
+DEBUG host: Trying: windows
+ INFO host: Detected: windows!
+ INFO runner: Preparing hooks for middleware sequence...
+ INFO runner: 1 hooks defined.
+ INFO runner: Running action: machine_action_read_state #<Vagrant::Action::Builder:0x0000000005acf878>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::BeforeTriggerAction:0x0000000005778008>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::ConfigValidate:0x0000000005779930>
+ERROR warden: Error occurred: There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+SSH:
+* `private_key_path` file must exist: ~/id_rsa
+
+Google Provider:
+* Private key for Google could not be found in the specified location.
+
+
+ INFO warden: Beginning recovery process...
+ INFO warden: Recovery complete.
+ INFO warden: Beginning recovery process...
+ INFO warden: Recovery complete.
+ INFO environment: Released process lock: machine-action-814f2d90ef9b4a44ab93b12db355bce7
+ INFO environment: Running hook: environment_unload
+ INFO runner: Preparing hooks for middleware sequence...
+ INFO runner: 1 hooks defined.
+ INFO runner: Running action: environment_unload #<Vagrant::Action::Builder:0x000000000510c458>
+ERROR vagrant: Vagrant experienced an error! Details:
+ERROR vagrant: #<Vagrant::Errors::ConfigInvalid: There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+SSH:
+* `private_key_path` file must exist: ~/id_rsa
+
+Google Provider:
+* Private key for Google could not be found in the specified location.
+
+>
+ERROR vagrant: There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+SSH:
+* `private_key_path` file must exist: ~/id_rsa
+
+Google Provider:
+* Private key for Google could not be found in the specified location.
+
+
+ERROR vagrant: C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/action/builtin/config_validate.rb:18:in `call'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/action/warden.rb:50:in `call'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/action/builtin/before_trigger.rb:23:in `call'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/action/warden.rb:50:in `call'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/action/builder.rb:116:in `call'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/action/runner.rb:102:in `block in run'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/util/busy.rb:19:in `busy'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/action/runner.rb:102:in `run'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/machine.rb:238:in `action_raw'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/machine.rb:209:in `block in action'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/environment.rb:613:in `lock'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/machine.rb:195:in `call'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/machine.rb:195:in `action'
+C:/Users/MadaPparamG/.vagrant.d/gems/2.4.9/gems/vagrant-google-2.5.0/lib/vagrant-google/provider.rb:50:in `state'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/machine.rb:532:in `state'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/machine.rb:146:in `initialize'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/vagrantfile.rb:81:in `new'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/vagrantfile.rb:81:in `machine'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/environment.rb:715:in `machine'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/plugin/v2/command.rb:180:in `block in with_target_vms'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/plugin/v2/command.rb:204:in `block in with_target_vms'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/plugin/v2/command.rb:186:in `each'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/plugin/v2/command.rb:186:in `with_target_vms'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/commands/up/command.rb:87:in `execute'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/cli.rb:66:in `execute'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/lib/vagrant/environment.rb:290:in `cli'
+C:/HashiCorp/Vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/bin/vagrant:182:in `<main>'
+ INFO interface: error: There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+SSH:
+* `private_key_path` file must exist: ~/id_rsa
+
+Google Provider:
+* Private key for Google could not be found in the specified location.
+
+
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+SSH:
+* `private_key_path` file must exist: ~/id_rsa
+
+Google Provider:
+* Private key for Google could not be found in the specified location.
+
+
+ INFO interface: Machine: error-exit ["Vagrant::Errors::ConfigInvalid", "There are errors in the configuration of this machine. Please fix\nthe following errors and try again:\n\nSSH:\n* `private_key_path` file must exist: ~/id_rsa\n\nGoogle Provider:\n* Private key for Google could not be found in the specified location.\n\n"]
