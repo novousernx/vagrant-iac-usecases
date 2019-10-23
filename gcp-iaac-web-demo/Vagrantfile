@@ -1,0 +1,59 @@
+# Require the AWS provider plugin 
+require 'vagrant-google'
+
+# Create and configure the GCP instance(s)
+Vagrant.configure('2') do |config|
+  
+  # Since we are using GCP Image, below config.vm.box is just for syntax purpose.
+  # config.vm.box = 'perconajayj/centos-x86_64'
+  config.vm.box = "google/gce"
+
+  # config.vm.hostname is not mandatory as AWS will handle the same.
+  # config.vm.hostname = "webserver101"
+
+  # Specify GCP provider configurations
+  # config.vm.provider 'aws' do |aws, override|
+  config.vm.provider :google do |google, override|
+  
+    # google.google_project_id = "YOUR_GOOGLE_CLOUD_PROJECT_ID"
+    google.google_project_id = "devops-vinmel"
+    
+    # google.google_client_email = "YOUR_SERVICE_ACCOUNT_EMAIL_ADDRESS"
+    google.google_client_email = "iacdemo@devops-vinmel.iam.gserviceaccount.com"
+
+    # google.google_json_key_location = "/path/to/your/private-key.json"
+    # google.google_json_key_location = "/d/Users/Gineesh/DevOps-VinMel-a1d7290c059e.json"
+
+    # for my Mac
+    google.google_json_key_location = "~/DevOps-VinMel-a1d7290c059e.json"
+
+    # Specify AWS instance type to use
+    # aws.instance_type = 't2.micro'
+
+    # Specify AWS region
+    # aws.region = 'us-west-2'
+    
+    # Specify GCP Image Family
+    google.image_family = 'ubuntu-1604-lts'
+
+    # Specify AWS security group(s). Make sure you have ssh, http, https enabled for the same.
+    # aws.security_groups = ['secgrp-for-web']
+
+    # Specify username and private key path
+    
+    # From my Mac
+    #override.ssh.username = 'gini'
+    #override.ssh.private_key_path = "~/.ssh/id_gce"
+
+    # for windows
+    override.ssh.username = 'Gineesh'
+    override.ssh.private_key_path = 'd:\\Users\\Gineesh\\.ssh\\id_rsa' 
+
+  end
+
+  # Specify Ansible as provisioner and provide the playbook details.
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.verbose = "v"
+    ansible.playbook = "deploy-infra.yaml"
+  end
+end
