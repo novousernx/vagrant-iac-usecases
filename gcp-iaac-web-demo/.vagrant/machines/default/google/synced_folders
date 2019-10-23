@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/devops/devops/vagrant-iaac-usecases/gcp-iaac-web-demo","disabled":false,"__vagrantfile":true,"owner":"devops","group":"devops"}}}
