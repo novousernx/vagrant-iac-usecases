@@ -151,7 +151,7 @@
         regexp: '^admin_password=.*'
         replace: 'admin_password=awxadmin'
 
-    - name: Run the AWX installation playbook
+    - name: "Run AWX installation playbook - WARNING : PLEASE BE PATIENT"
       command: "ansible-playbook -i inventory install.yml"
       args:
         chdir: "{{ ansible_env.HOME }}/awx-6.1.0//installer"
