@@ -8,34 +8,8 @@ eg:
 
 Any questions : [Email](mailto:net.gini@gmail.com) | [LinkedIn](http://bit.ly/gineesh) | [www.techbeatly.com](www.techbeatly.com)
 
-<!-- vscode-markdown-toc -->
-* 1. [How to use this repo - Quick Overview](#Howtousethisrepo-QuickOverview)
-* 2. [What Vagrant IaaC can do ?](#WhatVagrantIaaCcando)
-* 3. [Setup Provider Environment](#SetupProviderEnvironment)
-	* 3.1. [AWS Setup](#AWSSetup)
-	* 3.2. [Google Cloud Platform Setup](#GoogleCloudPlatformSetup)
-* 4. [Step 1 - Configure Pre-requisites](#Step1-ConfigurePre-requisites)
-	* 4.1. [Vagrant Installation](#VagrantInstallation)
-	* 4.2. [Plugin Installation](#PluginInstallation)
-	* 4.3. [Setup Provider Environment - GCP/AWS/VMWare](#SetupProviderEnvironment-GCPAWSVMWare)
-	* 4.4. [Box Image](#BoxImage)
-* 5. [Step 2 - Create our Virtual Machine](#Step2-CreateourVirtualMachine)
-	* 5.1. [Vagrantfile](#Vagrantfile)
-	* 5.2. [Provisioning](#Provisioning)
-		* 5.2.1. [When provisioning happens ?](#Whenprovisioninghappens)
-	* 5.3. [Let's create the VM](#LetscreatetheVM)
-	* 5.4. [Verify our instance](#Verifyourinstance)
-	* 5.5. [Stop or Delete VM](#StoporDeleteVM)
-	* 5.6. [Troubleshooting](#Troubleshooting)
-		* 5.6.1. [vagrant up hang at "==> default: Waiting for SSH to become available..."](#vagrantuphangatdefault:WaitingforSSHtobecomeavailable...)
 
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
-
-##  1. <a name='Howtousethisrepo-QuickOverview'></a>How to use this repo - Quick Overview
+## How to use this repo - Quick Overview
 
 1. Install Vagrant
 2. Configure GCP credentials.
@@ -47,7 +21,7 @@ git clone git@github.com:ginigangadharan/vagrant-iaac-usecases.git
 
 See below for detailed instructions.
 
-##  2. <a name='WhatVagrantIaaCcando'></a>What Vagrant IaaC can do ?
+## What Vagrant IaaC can do ?
 
 This repo container multiple usecases to demonstrate how to implement IaaC using Vagrant on GCP, AWS, VMware(INPG) etc
 
@@ -57,12 +31,12 @@ This repo container multiple usecases to demonstrate how to implement IaaC using
 - It will configure system with required settings.
     - enable firewall and root login securities automatically using ansible provisioning. 
 
-##  3. <a name='SetupProviderEnvironment'></a>Setup Provider Environment 
+## Setup Provider Environment 
 
 We need to configure provider (GCP or AWS) credential accordingly.
 
 
-###  3.1. <a name='AWSSetup'></a>AWS Setup
+### AWS Setup
 3.1 Make sure you have a proper **security group** created in your VPC (under your AWS account) with SSH, HTTP/HTTPS allowed.
 3.2 Make sure you have created a **keypair** for this purpose and key file (**.pem** format) has been kept at a secure location on your machine.
 3.3 Get your **access credentials** from AWS console. ([Refer my AWI CLI installation article](https://www.techbeatly.com/2018/03/how-to-install-and-configure-aws-command-line-interface-cli.html/#how-to-get-aws-credentials)). Add the same in ```~/.aws/credentials``` file.
@@ -95,7 +69,7 @@ region=us-west-2 output=json
 region=us-west-2 output=json
 ```
 
-###  3.2. <a name='GoogleCloudPlatformSetup'></a>Google Cloud Platform Setup
+### Google Cloud Platform Setup
 
 Prior to using this plugin, you will first need to make sure you have a 
 Google Cloud Platform account, enable Google Compute Engine, and create a
@@ -129,16 +103,16 @@ Service Account for API Access.
    readme section for more information.)
    
 
-##  4. <a name='Step1-ConfigurePre-requisites'></a>Step 1 - Configure Pre-requisites
+## Step 1 - Configure Pre-requisites
 
 To test this demo, you need to follow below items.
 
-###  4.1. <a name='VagrantInstallation'></a>Vagrant Installation
+### Vagrant Installation
 [Download](https://www.vagrantup.com/downloads.html) and install vagrant on your host/workstation. (Your laptop or a control server)
 
 Refer [Vagrant Documentation](https://www.vagrantup.com/docs/installation/) for more details.
 
-###  4.2. <a name='PluginInstallation'></a>Plugin Installation
+### Plugin Installation
 
 Vagrant is coming with support for VirtualBox, Hyper-V, and Docker. If you want to create your virtual machine on any other environment (like AWS or Azure) Vagrant still has the ability to manage this but only by using  providers plugins. 
 
@@ -163,7 +137,7 @@ yum -y install gcc ruby-devel rubygems compass
 Instal ```xcode-select --install```.
 
 
-###  4.3. <a name='SetupProviderEnvironment-GCPAWSVMWare'></a>Setup Provider Environment - GCP/AWS/VMWare
+### Setup Provider Environment - GCP/AWS/VMWare
 
 - Make sure you have a proper **firewall** rules in place with SSH, HTTP/HTTPS allowed.
 
@@ -172,21 +146,21 @@ Instal ```xcode-select --install```.
 - Get your **access credentials** from GCP/AWS console. And save somewhere secure (eg: `~/.gc/YOUR-API-KEY.json`)
 
 
-###  4.4. <a name='BoxImage'></a>Box Image 
+### Box Image 
 In normal case with VirtualBox or HyberV, we need to give proper box details to load the image (like a template or clone). But in this case we are using GCP Imageand config.vm.box is just for a vagrant syntax purpose. 
 
 You can either add a dummy box(``` vagrant box add aws-dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box ```) or just use any available box image, just like what I did in Vagrantfile.
 
 (You can choose any box by searching [here](https://app.vagrantup.com/boxes/search?provider=google) for working with VirtualBox, Hyper-V or Docker)
 
-##  5. <a name='Step2-CreateourVirtualMachine'></a>Step 2 - Create our Virtual Machine
+## Step 2 - Create our Virtual Machine
 
 Vagrant is managed inside a project directory (anywhere at your convenience, eg: your home dir) where we save Vagrantfile, other provisioning scripts etc (bash or ansible playbooks).
 
-###  5.1. <a name='Vagrantfile'></a>Vagrantfile
+### Vagrantfile
 We have **Vagrantfile** where we specify what type of VM we are creating, what are the specifications needed etc. You may refer [Vagrantfile](Vagrantfile) in this project for reference. (Items are explained inside the file)
 
-###  5.2. <a name='Provisioning'></a>Provisioning 
+### Provisioning 
 Vagrant Provisioners will help to automatically install software, update configurations etc as part of the vagrant up process. You can use any available provisioning method as Vagrant will support most of the build and configuration management softwares. (eg: bash, ansible, puppet, chef etc). 
 Refer [Provisioning doc](https://www.vagrantup.com/docs/provisioning/)
 
@@ -212,12 +186,12 @@ And we have 2 handlers in playbook
 2. Show public url
 
 
-####  5.2.1. <a name='Whenprovisioninghappens'></a>When provisioning happens ?
+#### When provisioning happens ?
 - When we run first ```vagrant up``` provisioning is run after creating this instance. 
 - When ```vagrant provision``` is used on a running environment.
 - When ```vagrant reload --provision``` is called. (If you have a change in provision script, just edit the yaml file and run this.)
 
-###  5.3. <a name='LetscreatetheVM'></a>Let's create the VM
+### Let's create the VM
 Now, we will switch to the Vagrant project directory (vagrant-web) and create the VM.
 ```
 # cd vagrant-web
@@ -225,7 +199,7 @@ Now, we will switch to the Vagrant project directory (vagrant-web) and create th
 ```
 Wait for vagrant to create instance and provision software/configurations using ansible.
 
-###  5.4. <a name='Verifyourinstance'></a>Verify our instance
+### Verify our instance
 If all goes well, you will see success message as well as a **public hostname url** in this case. We can access the url from browser and verify the website. (We have already a check inside the playbook to verify url access)
 
 Also you can access the instance using ssh as below.
@@ -233,13 +207,13 @@ Also you can access the instance using ssh as below.
 vagrant ssh
 ```
 
-###  5.5. <a name='StoporDeleteVM'></a>Stop or Delete VM
+### Stop or Delete VM
 ```
 vagrant destroy
 ```
 
-###  5.6. <a name='Troubleshooting'></a>Troubleshooting
-####  5.6.1. <a name='vagrantuphangatdefault:WaitingforSSHtobecomeavailable...'></a>vagrant up hang at "==> default: Waiting for SSH to become available..."
+### Troubleshooting
+#### vagrant up hang at "==> default: Waiting for SSH to become available..."
 This is due to wrong ssh configurations; you need to make sure
 - Your .pem key has correct permission and ownership
 - You have used correct Security Group (with ssh access) in Vagrantfile
