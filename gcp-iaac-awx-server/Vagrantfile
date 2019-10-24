@@ -14,8 +14,9 @@ Vagrant.configure('2') do |config|
     google.google_project_id = "devops-vinmel"       
     # google.google_json_key_location = "~/DevOps-VinMel-a1d7290c059e.json"  # for my Mac
     google.google_json_key_location = "~/.gcp/DevOps-VinMel-ef65f08aefc1.json"
-    google.image_family = 'ubuntu-1604-lts'
-    machine_type = 'g1-small' #g1-small / n1-standard-1 / n1-standard-2 etc
+    google.image_family = 'centos-7' #'ubuntu-1604-lts'
+    machine_type = 'n1-standard-1' #g1-small / n1-standard-1 / n1-standard-2 etc
+    disk_size = 20
     # From my Mac
     #override.ssh.username = 'gini'
     #override.ssh.private_key_path = "~/.ssh/id_gce"   
@@ -31,6 +32,6 @@ Vagrant.configure('2') do |config|
   # Specify Ansible as provisioner and provide the playbook details.
   config.vm.provision "ansible_local" do |ansible|
     ansible.verbose = "v"
-    ansible.playbook = "deploy-infra.yaml"
+    ansible.playbook = "deploy-awx.yml"
   end
 end
