@@ -8,6 +8,9 @@ eg:
 
 Any questions : [Email](mailto:net.gini@gmail.com) | [LinkedIn](http://bit.ly/gineesh) | [www.techbeatly.com](www.techbeatly.com)
 
+[[TOC]]
+
+
 ## How to use this repo - Quick Overview
 
 1. Install Vagrant
@@ -106,12 +109,12 @@ Service Account for API Access.
 
 To test this demo, you need to follow below items.
 
-### 1.1 Vagrant Installation
+### Vagrant Installation
 [Download](https://www.vagrantup.com/downloads.html) and install vagrant on your host/workstation. (Your laptop or a control server)
 
 Refer [Vagrant Documentation](https://www.vagrantup.com/docs/installation/) for more details.
 
-### 1.2 Plugin Installation
+### Plugin Installation
 
 Vagrant is coming with support for VirtualBox, Hyper-V, and Docker. If you want to create your virtual machine on any other environment (like AWS or Azure) Vagrant still has the ability to manage this but only by using  providers plugins. 
 
@@ -136,7 +139,7 @@ yum -y install gcc ruby-devel rubygems compass
 Instal ```xcode-select --install```.
 
 
-### 1.3 Setup Provider Environment - GCP/AWS/VMWare
+### Setup Provider Environment - GCP/AWS/VMWare
 
 - Make sure you have a proper **firewall** rules in place with SSH, HTTP/HTTPS allowed.
 
@@ -156,10 +159,10 @@ You can either add a dummy box(``` vagrant box add aws-dummy https://github.com/
 
 Vagrant is managed inside a project directory (anywhere at your convenience, eg: your home dir) where we save Vagrantfile, other provisioning scripts etc (bash or ansible playbooks).
 
-### 2.1 Vagrantfile
+### Vagrantfile
 We have **Vagrantfile** where we specify what type of VM we are creating, what are the specifications needed etc. You may refer [Vagrantfile](Vagrantfile) in this project for reference. (Items are explained inside the file)
 
-### 2.2 Provisioning 
+### Provisioning 
 Vagrant Provisioners will help to automatically install software, update configurations etc as part of the vagrant up process. You can use any available provisioning method as Vagrant will support most of the build and configuration management softwares. (eg: bash, ansible, puppet, chef etc). 
 Refer [Provisioning doc](https://www.vagrantup.com/docs/provisioning/)
 
@@ -190,7 +193,7 @@ And we have 2 handlers in playbook
 - When ```vagrant provision``` is used on a running environment.
 - When ```vagrant reload --provision``` is called. (If you have a change in provision script, just edit the yaml file and run this.)
 
-### 2.3 Let's create the VM
+### Let's create the VM
 Now, we will switch to the Vagrant project directory (vagrant-web) and create the VM.
 ```
 # cd vagrant-web
@@ -198,7 +201,7 @@ Now, we will switch to the Vagrant project directory (vagrant-web) and create th
 ```
 Wait for vagrant to create instance and provision software/configurations using ansible.
 
-### 2.4 Verify our instance
+### Verify our instance
 If all goes well, you will see success message as well as a **public hostname url** in this case. We can access the url from browser and verify the website. (We have already a check inside the playbook to verify url access)
 
 Also you can access the instance using ssh as below.
@@ -206,7 +209,7 @@ Also you can access the instance using ssh as below.
 vagrant ssh
 ```
 
-### 2.5 Stop or Delete VM
+### Stop or Delete VM
 ```
 vagrant destroy
 ```
