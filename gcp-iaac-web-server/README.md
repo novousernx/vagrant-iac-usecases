@@ -1,76 +1,16 @@
-# Usecases Vagrant IaaC (Infra as a Code) 
-Using Vagrant for Quick Sandboxes.
+# Vagrant IaaC (Infra as a Code) on GCP - Demo
 
-eg:
-- Create an AWX (Ansible Web UI)server for demo (INPG)
-- Create a webserver with nginx installed and configured in GCP or AWS
-- Create Yum Repo server
+This is a simple repo to demonstrate how to implement IaaC using Vagrant on GCP. 
 
 Any questions : [Email](mailto:net.gini@gmail.com) | [LinkedIn](http://bit.ly/gineesh) | [www.techbeatly.com](www.techbeatly.com)
 
-
-## How to use this repo - Quick Overview
-
-1. Install Vagrant
-2. Configure GCP credentials.
-3. Clone this repo to your working directory
-```
-git clone git@github.com:ginigangadharan/vagrant-iaac-toc
-usecases.git
-```
-4. switch to `vagrant-iaac-usecases/gcp-iaac-web-demo` directory and run `vagrant up --provider=google`
-
-See below for detailed instructions.
-
-## What Vagrant IaaC can do ?
-
-This repo container multiple usecases to demonstrate how to implement IaaC using Vagrant on GCP, AWS, VMware(INPG) etc
-
-- This **IaaC** will create  Virtual Machine(s) in **GCP/AWS** 
-- It will install required application inside the VM (we will use ansible as provisioner)
-    - eg: install nginx and add website content from [github sample site](https://github.com/ginigangadharan/demo-website-content.git) etc.
-- It will configure system with required settings.
-    - enable firewall and root login securities automatically using ansible provisioning. 
-
-## Setup Provider Environment 
-
-We need to configure provider (GCP or AWS) credential accordingly.
+This **IaaC** will create a Virtual Machine in **GCP** in which **nginx** webserver 
+will be installed automatically. Also, website content will be copied 
+from [github sample site](https://github.com/ginigangadharan/demo-website-content.git). 
+We will also enable firewall and root login securities automatically using ansible provisioning. 
 
 
-### AWS Setup
-3.1 Make sure you have a proper **security group** created in your VPC (under your AWS account) with SSH, HTTP/HTTPS allowed.
-3.2 Make sure you have created a **keypair** for this purpose and key file (**.pem** format) has been kept at a secure location on your machine.
-3.3 Get your **access credentials** from AWS console. ([Refer my AWI CLI installation article](https://www.techbeatly.com/2018/03/how-to-install-and-configure-aws-command-line-interface-cli.html/#how-to-get-aws-credentials)). Add the same in ```~/.aws/credentials``` file.
-
-```
-# aws configure --profile devops
-AWS Access Key ID [None]: AKIAJVOHCIQ72EXAMPLE
-AWS Secret Access Key [None]: 7l/j/hxXeEA77/7e+7ZvLLBQW9SxdcEXAMPLEKEY
-Default region name [None]: us-west-2
-Default output format [None]: json
-```
-
-Verify content in the files
-```
-# mkdir ~/.aws
-# cd ~/.aws/
-# cat credentials 
-[default]
-aws_access_key_id=AKIAIOSFODNN7EXAMPLE
-aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-
-[devops]
-aws_access_key_id=AKIAJVOHCIQ72EXAMPLE
-aws_secret_access_key=7l/j/hxXeEA77/7e+7ZvLLBQW9SxdcEXAMPLEKEY
-
-# cat config 
-[default] 
-region=us-west-2 output=json 
-[devops] 
-region=us-west-2 output=json
-```
-
-### Google Cloud Platform Setup
+## Google Cloud Platform Setup
 
 Prior to using this plugin, you will first need to make sure you have a 
 Google Cloud Platform account, enable Google Compute Engine, and create a
@@ -104,64 +44,70 @@ Service Account for API Access.
    readme section for more information.)
    
 
-## Step 1 - Configure Pre-requisites
+## How to use this repo - Quick Overview
 
+1. Install Vagrant
+2. Configure GCP credentials.
+3. Clone this repo to your working directory
+```
+git clone git@github.com:ginigangadharan/vagrant-iaac-usecases.git
+```
+4. switch to `vagrant-iaac-usecases/gcp-iaac-web-demo` directory and run `vagrant up --provider=google`
+
+See below for detailed instructions.
+
+## Step 1 - Configure Pre-requisites
 To test this demo, you need to follow below items.
 
-### Vagrant Installation
+### 1.1 Vagrant Installation
 [Download](https://www.vagrantup.com/downloads.html) and install vagrant on your host/workstation. (Your laptop or a control server)
 
 Refer [Vagrant Documentation](https://www.vagrantup.com/docs/installation/) for more details.
 
-### Plugin Installation
-
-Vagrant is coming with support for VirtualBox, Hyper-V, and Docker. If you want to create your virtual machine on any other environment (like AWS or Azure) Vagrant still has the ability to manage this but only by using  providers plugins. 
+### 1.2 Plugin Installation - vagrant-google
+Vagrant is coming with support for VirtualBox, Hyper-V, and Docker. If you want to create your virtual machine on any other environment (like AWS or Azure) Vagrant still has the ability to manage this but only by using  providers plugins. For this case we are using gcp and we use **vagrant-google** plugin.
 
 ```
 vagrant plugin install vagrant-google
 ```
-or
 
+*If any issues during installation, then try with installing dependencies. (Depends on the workstation machine you are using, packages and version may change)*
+```
+yum -y install gcc ruby-devel rubygems compass
+```
+**Mac Users**
+If you are getting an error ```OS-X, Rails: “Failed to build gem native extension”```, then you need to setup xcode.
+Instal ```xcode-select --install```.
+
+
+#### Notes
+For other providers, you can find and install respective plugins; eg:
 ```
 vagrant plugin install vagrant-digitalocean 
 vagrant plugin install vagrant-omnibus
 vagrant plugin install vagrant-aws
 ```
 
-*If any issues during installation, then try with installing dependencies. (Depends on the workstation machine you are using, packages and version may change)*
-
-```
-yum -y install gcc ruby-devel rubygems compass
-```
-
-**Mac Users** : If you are getting an error ```OS-X, Rails: “Failed to build gem native extension”```, then you need to setup xcode.
-Instal ```xcode-select --install```.
+### 1.3 Setup Provider Environment - GCP
+3.1 Make sure you have a proper **firewall** rules in place with SSH, HTTP/HTTPS allowed.
+3.2 Make sure you have created a **keypair** for this purpose and key file has been kept at a secure location on your machine. (eg: `~/.ssh/id_rsa`)
+3.3 Get your **access credentials** from GCP console. And saved somewhere secure (eg: `~/.gc/YOUR-API-KEY.json`)
 
 
-### Setup Provider Environment - GCP/AWS/VMWare
-
-- Make sure you have a proper **firewall** rules in place with SSH, HTTP/HTTPS allowed.
-
-- Make sure you have created a **keypair** for this purpose and key file has been kept at a secure location on your machine. (eg: `~/.ssh/id_rsa`)
-
-- Get your **access credentials** from GCP/AWS console. And save somewhere secure (eg: `~/.gc/YOUR-API-KEY.json`)
-
-
-### Box Image 
+#### Box Image 
 In normal case with VirtualBox or HyberV, we need to give proper box details to load the image (like a template or clone). But in this case we are using GCP Imageand config.vm.box is just for a vagrant syntax purpose. 
 
 You can either add a dummy box(``` vagrant box add aws-dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box ```) or just use any available box image, just like what I did in Vagrantfile.
 
 (You can choose any box by searching [here](https://app.vagrantup.com/boxes/search?provider=google) for working with VirtualBox, Hyper-V or Docker)
 
-## Step 2 - Create our Virtual Machine
-
+## Step 2 - Create our Virtual Machine - GCP Instance
 Vagrant is managed inside a project directory (anywhere at your convenience, eg: your home dir) where we save Vagrantfile, other provisioning scripts etc (bash or ansible playbooks).
 
-### Vagrantfile
+### 2.1 Vagrantfile
 We have **Vagrantfile** where we specify what type of VM we are creating, what are the specifications needed etc. You may refer [Vagrantfile](Vagrantfile) in this project for reference. (Items are explained inside the file)
 
-### Provisioning 
+### 2.2 Provisioning 
 Vagrant Provisioners will help to automatically install software, update configurations etc as part of the vagrant up process. You can use any available provisioning method as Vagrant will support most of the build and configuration management softwares. (eg: bash, ansible, puppet, chef etc). 
 Refer [Provisioning doc](https://www.vagrantup.com/docs/provisioning/)
 
@@ -192,7 +138,7 @@ And we have 2 handlers in playbook
 - When ```vagrant provision``` is used on a running environment.
 - When ```vagrant reload --provision``` is called. (If you have a change in provision script, just edit the yaml file and run this.)
 
-### Let's create the VM
+### 2.3 Let's create the VM
 Now, we will switch to the Vagrant project directory (vagrant-web) and create the VM.
 ```
 # cd vagrant-web
@@ -200,7 +146,7 @@ Now, we will switch to the Vagrant project directory (vagrant-web) and create th
 ```
 Wait for vagrant to create instance and provision software/configurations using ansible.
 
-### Verify our instance
+### 2.4 Verify our instance
 If all goes well, you will see success message as well as a **public hostname url** in this case. We can access the url from browser and verify the website. (We have already a check inside the playbook to verify url access)
 
 Also you can access the instance using ssh as below.
@@ -208,7 +154,7 @@ Also you can access the instance using ssh as below.
 vagrant ssh
 ```
 
-### Stop or Delete VM
+### 2.5 Stop or Delete VM
 ```
 vagrant destroy
 ```
