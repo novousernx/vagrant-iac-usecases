@@ -1,4 +1,4 @@
-# Usecases Vagrant IaaC (Infra as a Code) 
+# Usecases Vagrant IaaC (Infra as Code) 
 Using Vagrant for Quick Sandboxes.
 
 eg:
