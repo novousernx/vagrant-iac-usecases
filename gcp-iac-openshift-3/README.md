@@ -7,7 +7,7 @@
 
 Refer **[READEME](https://github.com/ginigangadharan/vagrant-iac-usecases/blob/master/README.md)** for environment setup
 
-**See More use cases at [vagrant-iac-use cases](https://github.com/ginigangadharan/vagrant-iac-use cases)**
+See More use cases at **[vagrant-iac-use cases](https://github.com/ginigangadharan/vagrant-iac-use cases)**
 
 ## Build OpenShift 3.0 Single Node Cluster
 - Clone [master repo](https://github.com/ginigangadharan/vagrant-iac-use cases)
