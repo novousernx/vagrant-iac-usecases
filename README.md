@@ -1,10 +1,13 @@
-# Use cases Vagrant IaC (Infra as Code) 
+# Vagrant IaC (Infrastructure as Code) Use Cases
 
 Using Vagrant for Quick Sandboxes.
 
 This is a simple repo to demonstrate how to implement iac using Vagrant on AWS, GCP, VMWare, VirtualBox etc. We have implemented **iac (Infra-As-A-Code)** and CaC(Configuration-as-Code) using Vagrant and Ansible. 
 
-Sample Use cases:
+## Sample Use cases:
+
+See some of the subdirectories for sample usage.
+
 - Create an AWX (Ansible Web UI)server for demo (INPG)
 - Create application server for develpers on everyday with same spec and destroy when finished
 - Create a webserver with nginx installed and configured in GCP or AWS
@@ -13,6 +16,31 @@ Sample Use cases:
 
 Questions : [iamgini.com](http://www.iamgini.com)
 
+<!-- TOC orderedlist:false -->
+
+- [Vagrant IaC (Infrastructure as Code) Use Cases](#vagrant-iac-infrastructure-as-code-use-cases)
+  - [Sample Use cases:](#sample-use-cases)
+  - [How to use this repo - Quick Overview](#how-to-use-this-repo---quick-overview)
+  - [What Vagrant iac can do ?](#what-vagrant-iac-can-do)
+  - [Setup Provider Environment](#setup-provider-environment)
+    - [AWS Setup](#aws-setup)
+    - [Google Cloud Platform Setup](#google-cloud-platform-setup)
+  - [Step 1 - Configure Pre-requisites](#step-1---configure-pre-requisites)
+    - [Vagrant Installation](#vagrant-installation)
+    - [Plugin Installation](#plugin-installation)
+    - [Setup Provider Environment - GCP/AWS/VMWare](#setup-provider-environment---gcpawsvmware)
+    - [Box Image](#box-image)
+  - [Step 2 - Create our Virtual Machine](#step-2---create-our-virtual-machine)
+    - [Vagrantfile](#vagrantfile)
+    - [Provisioning](#provisioning)
+      - [When provisioning happens ?](#when-provisioning-happens)
+    - [Let's create the VM](#lets-create-the-vm)
+    - [Verify our instance](#verify-our-instance)
+    - [Stop or Delete VM](#stop-or-delete-vm)
+    - [Troubleshooting](#troubleshooting)
+      - [vagrant up hang at "==> default: Waiting for SSH to become available..."](#vagrant-up-hang-at-%22-default-waiting-for-ssh-to-become-available%22)
+
+<!-- /TOC -->
 
 ## How to use this repo - Quick Overview
 
