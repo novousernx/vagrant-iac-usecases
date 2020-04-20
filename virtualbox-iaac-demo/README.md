@@ -1,2 +1,2 @@
-# vagrant-virtualbox-iaac-demo
+# vagrant-virtualbox-iac-demo
 Simple vagrant demo with virtualbox

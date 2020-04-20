@@ -15,18 +15,18 @@ Any questions : [Email](mailto:net.gini@gmail.com) | [LinkedIn](http://bit.ly/gi
 2. Configure GCP credentials.
 3. Clone this repo to your working directory
 ```
-git clone git@github.com:ginigangadharan/vagrant-iaac-toc
+git clone git@github.com:ginigangadharan/vagrant-iac-toc
 usecases.git
 ```
-4. switch to `vagrant-iaac-usecases/gcp-iaac-web-demo` directory and run `vagrant up --provider=google`
+4. switch to `vagrant-iac-usecases/gcp-iac-web-demo` directory and run `vagrant up --provider=google`
 
 See below for detailed instructions.
 
-## What Vagrant IaaC can do ?
+## What Vagrant iac can do ?
 
-This repo container multiple usecases to demonstrate how to implement IaaC using Vagrant on GCP, AWS, VMware(INPG) etc
+This repo container multiple usecases to demonstrate how to implement iac using Vagrant on GCP, AWS, VMware(INPG) etc
 
-- This **IaaC** will create  Virtual Machine(s) in **GCP/AWS** 
+- This **iac** will create  Virtual Machine(s) in **GCP/AWS** 
 - It will install required application inside the VM (we will use ansible as provisioner)
     - eg: install nginx and add website content from [github sample site](https://github.com/ginigangadharan/demo-website-content.git) etc.
 - It will configure system with required settings.

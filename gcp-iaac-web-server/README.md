@@ -1,10 +1,10 @@
-# Vagrant IaaC (Infra as a Code) on GCP - Demo
+# Vagrant iac (Infra as a Code) on GCP - Demo
 
-This is a simple repo to demonstrate how to implement IaaC using Vagrant on GCP. 
+This is a simple repo to demonstrate how to implement iac using Vagrant on GCP. 
 
 Any questions : [Email](mailto:net.gini@gmail.com) | [LinkedIn](http://bit.ly/gineesh) | [www.techbeatly.com](www.techbeatly.com)
 
-This **IaaC** will create a Virtual Machine in **GCP** in which **nginx** webserver 
+This **iac** will create a Virtual Machine in **GCP** in which **nginx** webserver 
 will be installed automatically. Also, website content will be copied 
 from [github sample site](https://github.com/ginigangadharan/demo-website-content.git). 
 We will also enable firewall and root login securities automatically using ansible provisioning. 
@@ -50,9 +50,9 @@ Service Account for API Access.
 2. Configure GCP credentials.
 3. Clone this repo to your working directory
 ```
-git clone git@github.com:ginigangadharan/vagrant-iaac-usecases.git
+git clone git@github.com:ginigangadharan/vagrant-iac-usecases.git
 ```
-4. switch to `vagrant-iaac-usecases/gcp-iaac-web-demo` directory and run `vagrant up --provider=google`
+4. switch to `vagrant-iac-usecases/gcp-iac-web-demo` directory and run `vagrant up --provider=google`
 
 See below for detailed instructions.
 
