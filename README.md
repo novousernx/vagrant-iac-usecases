@@ -4,6 +4,11 @@ Using Vagrant for Quick Sandboxes.
 
 This is a simple repo to demonstrate how to implement iac using Vagrant on AWS, GCP, VMWare, VirtualBox etc. We have implemented **iac (Infra-As-A-Code)** and CaC(Configuration-as-Code) using Vagrant and Ansible. 
 
+microsoft.com
+![IaC](images/infrastructureascode_600x300-3.png)
+
+*Image: microsoft.com*
+
 ## Sample Use cases:
 
 See some of the subdirectories for sample usage.
