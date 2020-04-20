@@ -1,8 +1,7 @@
-# Vagrant iac (Infra as a Code) on GCP - Demo
+# vagrant-virtualbox-iac-demo
+Simple vagrant demo with virtualbox
 
-This is a simple repo to demonstrate how to implement iac using Vagrant on GCP. 
-
-## Pre-Req
+# Pre-Req
 
 Refer **[READEME](https://github.com/ginigangadharan/vagrant-iac-usecases/blob/master/README.md)** for environment setup
 

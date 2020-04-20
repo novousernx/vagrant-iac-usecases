@@ -1,32 +1,36 @@
-# Usecases Vagrant IaC (Infra as Code) 
+# Use cases Vagrant IaC (Infra as Code) 
+
 Using Vagrant for Quick Sandboxes.
 
-eg:
+This is a simple repo to demonstrate how to implement iac using Vagrant on AWS, GCP, VMWare, VirtualBox etc. We have implemented **iac (Infra-As-A-Code)** and CaC(Configuration-as-Code) using Vagrant and Ansible. 
+
+Sample Use cases:
 - Create an AWX (Ansible Web UI)server for demo (INPG)
+- Create application server for develpers on everyday with same spec and destroy when finished
 - Create a webserver with nginx installed and configured in GCP or AWS
 - Create Yum Repo server
+- Deploy OpenShift (OKD) Single node cluster
 
-Any questions : [Email](mailto:net.gini@gmail.com) | [LinkedIn](http://bit.ly/gineesh) | [www.techbeatly.com](www.techbeatly.com)
+Questions : [iamgini.com](http://www.iamgini.com)
 
 
 ## How to use this repo - Quick Overview
 
 1. Install Vagrant
-2. Configure GCP credentials.
+2. Configure GCP/AWS/Other credentials.
 3. Clone this repo to your working directory
-```
-git clone git@github.com:ginigangadharan/vagrant-iac-toc
-usecases.git
-```
-4. switch to `vagrant-iac-usecases/gcp-iac-web-demo` directory and run `vagrant up --provider=google`
+
+`git clone git@github.com:ginigangadharan/vagrant-iac-usecases.git`
+
+4. switch to `vagrant-iac-use cases/gcp-iac-web-demo` directory and run `vagrant up --provider=google` (or other directories for other use cases)
 
 See below for detailed instructions.
 
 ## What Vagrant iac can do ?
 
-This repo container multiple usecases to demonstrate how to implement iac using Vagrant on GCP, AWS, VMware(INPG) etc
+This repo contains multiple use cases to demonstrate how to implement IaC (Infrastructure as Code) using **Vagrant** on GCP, AWS, VirtualBox, VMware(INPG) etc
 
-- This **iac** will create  Virtual Machine(s) in **GCP/AWS** 
+- This **IaC** will create  Virtual Machine(s) in **GCP,AWS etc** 
 - It will install required application inside the VM (we will use ansible as provisioner)
     - eg: install nginx and add website content from [github sample site](https://github.com/ginigangadharan/demo-website-content.git) etc.
 - It will configure system with required settings.
@@ -35,7 +39,6 @@ This repo container multiple usecases to demonstrate how to implement iac using 
 ## Setup Provider Environment 
 
 We need to configure provider (GCP or AWS) credential accordingly.
-
 
 ### AWS Setup
 3.1 Make sure you have a proper **security group** created in your VPC (under your AWS account) with SSH, HTTP/HTTPS allowed.
@@ -109,6 +112,7 @@ Service Account for API Access.
 To test this demo, you need to follow below items.
 
 ### Vagrant Installation
+
 [Download](https://www.vagrantup.com/downloads.html) and install vagrant on your host/workstation. (Your laptop or a control server)
 
 Refer [Vagrant Documentation](https://www.vagrantup.com/docs/installation/) for more details.
@@ -137,7 +141,6 @@ yum -y install gcc ruby-devel rubygems compass
 **Mac Users** : If you are getting an error ```OS-X, Rails: “Failed to build gem native extension”```, then you need to setup xcode.
 Instal ```xcode-select --install```.
 
-
 ### Setup Provider Environment - GCP/AWS/VMWare
 
 - Make sure you have a proper **firewall** rules in place with SSH, HTTP/HTTPS allowed.
@@ -146,8 +149,8 @@ Instal ```xcode-select --install```.
 
 - Get your **access credentials** from GCP/AWS console. And save somewhere secure (eg: `~/.gc/YOUR-API-KEY.json`)
 
-
 ### Box Image 
+
 In normal case with VirtualBox or HyberV, we need to give proper box details to load the image (like a template or clone). But in this case we are using GCP Imageand config.vm.box is just for a vagrant syntax purpose. 
 
 You can either add a dummy box(``` vagrant box add aws-dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box ```) or just use any available box image, just like what I did in Vagrantfile.
@@ -188,12 +191,15 @@ And we have 2 handlers in playbook
 
 
 #### When provisioning happens ?
+
 - When we run first ```vagrant up``` provisioning is run after creating this instance. 
 - When ```vagrant provision``` is used on a running environment.
 - When ```vagrant reload --provision``` is called. (If you have a change in provision script, just edit the yaml file and run this.)
 
 ### Let's create the VM
+
 Now, we will switch to the Vagrant project directory (vagrant-web) and create the VM.
+
 ```
 # cd vagrant-web
 # vagrant up
@@ -201,19 +207,19 @@ Now, we will switch to the Vagrant project directory (vagrant-web) and create th
 Wait for vagrant to create instance and provision software/configurations using ansible.
 
 ### Verify our instance
+
 If all goes well, you will see success message as well as a **public hostname url** in this case. We can access the url from browser and verify the website. (We have already a check inside the playbook to verify url access)
 
 Also you can access the instance using ssh as below.
-```
-vagrant ssh
-```
+
+`vagrant ssh`
 
 ### Stop or Delete VM
-```
-vagrant destroy
-```
+
+`vagrant destroy`
 
 ### Troubleshooting
+
 #### vagrant up hang at "==> default: Waiting for SSH to become available..."
 This is due to wrong ssh configurations; you need to make sure
 - Your .pem key has correct permission and ownership

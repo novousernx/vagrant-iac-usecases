@@ -3,12 +3,13 @@
 # OpenShift Node on GCP - Using Vaagrant iac 
 (Infra as a Code)
 
-Any questions : [Email](mailto:net.gini@gmail.com) | [LinkedIn](http://bit.ly/gineesh) | [www.techbeatly.com](www.techbeatly.com)
-
 ## Pre-Req
-Make sure you have read [Vagrant & Provider Setup](https://github.com/ginigangadharan/vagrant-iac-usecases/blob/master/README.md) before start.
+
+Refer **[READEME](https://github.com/ginigangadharan/vagrant-iac-usecases/blob/master/README.md)** for environment setup
+
+**See More use cases at [vagrant-iac-use cases](https://github.com/ginigangadharan/vagrant-iac-use cases)**
 
 ## Build OpenShift 3.0 Single Node Cluster
-- Clone [master repo](https://github.com/ginigangadharan/vagrant-iac-usecases)
-- Switch to `gcp-iac-awx-server` directory
-- `vagrant up --provider=google`
+- Clone [master repo](https://github.com/ginigangadharan/vagrant-iac-use cases)
+- Switch to `gcp-iac-openshift-3` directory
+- Then `vagrant up --provider=google`
