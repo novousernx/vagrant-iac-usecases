@@ -7,31 +7,14 @@
   # We will be installing the following packages, and 
   # then adding a user named “vagrant” to the “docker” group.  
   
+    - name: Copy edited calico
+      copy: src=calico.yaml dest=/tmp/calico.yaml mode=0777
   
   # Step 2.5: Setup the container networking provider and the network policy engine using the below code.
-  #  - name: Install calico pod network
-  #    become: false
-  #    command: kubectl create -f https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/hosted/calico.yaml    
-  #    #changedthis
-  #    when: installcalico is defined
+    - name: Install calico pod network
+      become: false
+      #command: kubectl create -f https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/hosted/calico.yaml   
+      command: kubectl create -f /tmp/calico.yaml 
+      #changedthis
+      #when: installcalico is defined
   
-  # Step 2.6: Generate kube join command for joining the node to the Kubernetes cluster and store the command in the file named join-command.
-    - name: Generate join command
-      command: kubeadm token create --print-join-command
-      register: join_command
-    - debug:
-        msg: "{{ join_command }}"
-    - set_fact:
-        ansible_become: false
-    #- copy:
-    #    content: "{{ join_command.stdout_lines[0] }}"
-    #    dest: "/tmp/join-command"
-    #  delegate_to: localhost
-    - name: Copy join command to local file
-      become: no
-      local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./join-command"
-  
-  # Step 2.7: Setup a handler for checking Docker daemon using the below code.
-    handlers:
-      - name: docker status
-        service: name=docker state=started    
