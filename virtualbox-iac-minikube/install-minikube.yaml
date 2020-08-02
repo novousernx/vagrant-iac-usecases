@@ -185,3 +185,55 @@
         mode: 0755
         owner: vagrant
         group: vagrant
+
+    - name: Install and enable kubernetes dashboard components
+      shell: kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+      #shell: sudo kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended.yaml
+
+    #- name: Install Kubernetes Ingress components
+    #  shell: sudo kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/mandatory.yaml
+          
+    - name: Create dashboard admin user
+      shell: kubectl apply -f /vagrant/dashboard-adminuser.yaml
+
+    - name: Create Directory for basic Start page
+      file:
+        path: /home/vagrant/minikube
+        state: directory
+
+    - name: Copy Start Page for Easy Testing
+      copy:
+        src: index.html
+        dest: /home/vagrant/minikube/index.html
+        owner: vagrant
+        group: vagrant
+        
+    - name: Start kubectl proxy 
+      shell: "nohup kubectl proxy --address='0.0.0.0' –port=8001 --www=/home/vagrant/minikube --www-prefix=/minikube/"
+      async: 100
+      poll: 0
+      register: start_kube_proxy
+
+    - name: Check kubectl proxy output
+      debug:
+        msg: "{{ start_kube_proxy }}"
+
+    - name: Get Secret to Authenticate to kubernetes dashboard
+      shell: "kubectl -n kube-system get secret | grep default-token | awk '{print $1}'"
+      register: get_token
+
+    - name: Extract secret name
+      set_fact:
+        KUBE_TOKEN: "{{ get_token.stdout }}"
+
+    - name: Get Token to Authenticate to kubernetes dashboard
+      shell: "kubectl -n kube-system describe secret {{ KUBE_TOKEN }} | grep token: | awk '{print $2}'"
+      register: get_token_value
+    
+    - name: Access Below URL from your Host machine browser
+      debug:
+        msg: "http://localhost:8001/minikube/"
+  
+    - name: Use below token to authenticate in kubernetes dashboard"
+      debug:
+        msg: "{{ get_token_value.stdout }}"
