@@ -5,7 +5,7 @@ This is a simple repo to demonstrate how to install minikube inside a virtualbox
 **Important Note**
 If you are planning to other variants of box (ubuntu or debian instead of CentOS), make sure you adjust your Ansible playbook (`install-minikube.yaml`) accordingly.
 
-![minikube-vagrant-iac](minikube-vagrant-iac.png)
+![minikube-vagrant-iac](../images/minikube-vagrant-iac.png)
 
 ## How to use this repo - Quick Overview
 
