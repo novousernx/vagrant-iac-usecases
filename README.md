@@ -2,7 +2,7 @@
 
 Using Vagrant for Quick Sandboxes.
 
-This is a simple repo to demonstrate how to implement iac using Vagrant on AWS, GCP, VMWare, VirtualBox etc. We have implemented **iac (Infra-As-A-Code)** and CaC(Configuration-as-Code) using Vagrant and Ansible. 
+This is a simple repo to demonstrate how to implement iac using Vagrant on AWS, GCP, VMWare, VirtualBox etc. We have implemented **iac (Infra-a-Code)** and CaC(Configuration-as-Code) using Vagrant and Ansible. 
 
 microsoft.com
 ![IaC](images/infrastructureascode_600x300-3.png)
@@ -16,6 +16,7 @@ See some of the subdirectories for sample usage.
 - Create an AWX (Ansible Web UI)server for demo (INPG)
 - Create application server for develpers on everyday with same spec and destroy when finished
 - Create a webserver with nginx installed and configured in GCP or AWS
+- Create minikube or kubernetes
 - Create Yum Repo server
 - Deploy OpenShift (OKD) Single node cluster
 
@@ -26,7 +27,7 @@ Questions : [iamgini.com](http://www.iamgini.com)
 - [Vagrant IaC (Infrastructure as Code) Use Cases](#vagrant-iac-infrastructure-as-code-use-cases)
   - [Sample Use cases:](#sample-use-cases)
   - [How to use this repo - Quick Overview](#how-to-use-this-repo---quick-overview)
-  - [What Vagrant iac can do ?](#what-vagrant-iac-can-do)
+  - [What Vagrant iac can do ?](#what-vagrant-iac-can-do-)
   - [Setup Provider Environment](#setup-provider-environment)
     - [AWS Setup](#aws-setup)
     - [Google Cloud Platform Setup](#google-cloud-platform-setup)
@@ -38,12 +39,12 @@ Questions : [iamgini.com](http://www.iamgini.com)
   - [Step 2 - Create our Virtual Machine](#step-2---create-our-virtual-machine)
     - [Vagrantfile](#vagrantfile)
     - [Provisioning](#provisioning)
-      - [When provisioning happens ?](#when-provisioning-happens)
+      - [When provisioning happens ?](#when-provisioning-happens-)
     - [Let's create the VM](#lets-create-the-vm)
     - [Verify our instance](#verify-our-instance)
     - [Stop or Delete VM](#stop-or-delete-vm)
     - [Troubleshooting](#troubleshooting)
-      - [vagrant up hang at "==> default: Waiting for SSH to become available..."](#vagrant-up-hang-at-%22-default-waiting-for-ssh-to-become-available%22)
+      - [vagrant up hang at "==> default: Waiting for SSH to become available..."](#vagrant-up-hang-at--default-waiting-for-ssh-to-become-available)
 
 <!-- /TOC -->
 
