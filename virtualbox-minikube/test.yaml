@@ -4,7 +4,7 @@
   
   tasks:
     - name: Get Token
-      shell: "sudo kubectl proxy --address='0.0.0.0' –port=8001 --www=/home/vagrant/minikube --www-prefix=/minikube/"
+      shell: "sudo kubectl proxy --address='0.0.0.0' --port=8001 --www=/home/vagrant/minikube --www-prefix=/minikube/"
       async: 45
       poll: 0
       register: get_token
